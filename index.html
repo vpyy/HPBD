@@ -1,0 +1,416 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#ffd9df",
+              "on-surface-variant": "#5e3f3a",
+              primary: "#a20000",
+              "secondary-container": "#feb6c4",
+              "inverse-primary": "#ffb4a8",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              background: "#fbf9f8",
+              "surface-container-highest": "#e4e2e2",
+              "inverse-on-surface": "#f2f0f0",
+              "outline-variant": "#e8bdb6",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#454747",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-dim": "#dbd9d9",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#c6c6c7",
+              outline: "#936e69",
+              "on-secondary-container": "#7a4450",
+              "surface-container-low": "#f5f3f3",
+              "on-background": "#1b1c1c",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#e5e6e6",
+              "on-primary-fixed-variant": "#930000",
+              "on-tertiary-fixed": "#1a1c1c",
+              "primary-fixed": "#ffdad4",
+              surface: "#fbf9f8",
+              "on-secondary-fixed-variant": "#6b3743",
+              secondary: "#864e5a",
+              "inverse-surface": "#303030",
+              "primary-container": "#d00000",
+              "surface-bright": "#fbf9f8",
+              "on-primary-fixed": "#410000",
+              "surface-container": "#efeded",
+              "tertiary-container": "#656767",
+              "secondary-fixed-dim": "#fbb3c1",
+              "on-secondary-fixed": "#360c19",
+              "surface-container-high": "#eae8e7",
+              "on-primary-container": "#ffded9",
+              "on-error": "#ffffff",
+              "surface-variant": "#e4e2e2",
+              error: "#ba1a1a",
+              "surface-tint": "#c00000",
+              tertiary: "#4d4f4f",
+              "on-surface": "#1b1c1c",
+              "primary-fixed-dim": "#ffb4a8",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xxl: "80px",
+              "container-max": "1200px",
+              lg: "24px",
+              sm: "8px",
+              xl: "40px",
+              unit: "4px",
+              xs: "4px",
+              md: "16px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "display-lg": ["Playfair Display"],
+              "display-lg-mobile": ["Playfair Display"],
+              "headline-md": ["Playfair Display"],
+              "headline-sm": ["Playfair Display"],
+              "label-md": ["DM Sans"],
+              "body-md": ["DM Sans"],
+              "body-lg": ["DM Sans"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .floral-mask {
+        mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M44.7,-76.4C58.1,-69.2,69.5,-57.4,77.3,-43.8C85.1,-30.2,89.2,-15.1,88.2,-0.6C87.2,13.9,81,27.8,72.4,40.1C63.8,52.4,52.8,63,40.1,71.4C27.4,79.8,13.7,85.9,-1.1,87.8C-15.9,89.7,-31.8,87.4,-45.1,79.5C-58.4,71.6,-69.1,58.1,-76.8,43.5C-84.5,28.9,-89.2,13.3,-88.1,-2.2C-87,-17.7,-80.1,-33.1,-70.2,-44.6C-60.3,-56.1,-47.4,-63.7,-34.7,-71.3C-22,-78.9,-11,-86.5,2.7,-91.1C16.4,-95.7,31.3,-83.6,44.7,-76.4Z" transform="translate(100 100)" /></svg>');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body-md">
+    <!-- TopNavBar -->
+    <header
+      class="fixed w-full top-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-[0_4px_20px_rgba(208,0,0,0.04)]"
+    >
+      <nav
+        class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto"
+      >
+        <div
+          class="font-display-lg text-headline-sm text-primary dark:text-inverse-primary italic"
+        >
+          Eternal Bloom
+        </div>
+        <div class="hidden md:flex items-center gap-xl">
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md"
+            href="#celebration"
+            >Celebration</a
+          >
+          <a
+            class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-md text-label-md"
+            href="#gallery"
+            >Floral Gallery</a
+          >
+          <a
+            class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-md text-label-md"
+            href="#wishes"
+            >Our Wishes</a
+          >
+        </div>
+        <button
+          class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:scale-95 active:scale-90 transition-transform"
+        >
+          RSVP
+        </button>
+      </nav>
+    </header>
+    <main class="pt-xxl">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[819px] flex items-center overflow-hidden px-gutter"
+        id="celebration"
+      >
+        <div
+          class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-xl items-center w-full"
+        >
+          <div class="z-10 space-y-lg text-center md:text-left">
+            <span
+              class="inline-block text-secondary font-label-md tracking-widest uppercase"
+              >Kỷ niệm ngày đặc biệt</span
+            >
+            <h1
+              class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight"
+            >
+              Chúc Mừng <br />
+              Sinh Nhật!
+            </h1>
+            <p
+              class="font-body-lg text-on-surface-variant max-w-md mx-auto md:mx-0"
+            >
+              Chào mừng ngày 20/05 tuyệt vời. Mong rằng tuổi mới của bạn sẽ rực
+              rỡ và ngát hương như những đóa hoa thắm nhất.
+            </p>
+            <div
+              class="flex flex-wrap gap-md justify-center md:justify-start pt-md"
+            >
+              <button
+                class="bg-primary text-on-primary px-xl py-md rounded-full font-label-md text-label-md shadow-lg hover:opacity-90 transition-all"
+              >
+                Gửi Lời Chúc
+              </button>
+              <button
+                class="bg-secondary-fixed text-secondary px-xl py-md rounded-full font-label-md text-label-md hover:bg-secondary-container transition-all"
+              >
+                Xem Album
+              </button>
+            </div>
+          </div>
+          <div class="relative flex justify-center items-center">
+            <div
+              class="absolute inset-0 bg-secondary-fixed/30 rounded-full blur-3xl -z-10 animate-pulse"
+            ></div>
+            <div
+              class="floral-mask w-full aspect-square max-w-[500px] overflow-hidden shadow-2xl border-4 border-white"
+            >
+              <img
+                alt="Birthday Flowers"
+                class="w-full h-full object-cover"
+                data-alt="A lush, high-end bouquet of deep red roses and soft pink peonies arranged in a modern minimalist style. The lighting is soft and ethereal, suggesting an early morning celebratory mood. The background is a clean, neutral white, emphasizing the vibrant reds and delicate pinks of the petals. The overall aesthetic is romantic and luxurious, fitting for a milestone birthday celebration."
+                src="IMG_1778080343667_1778080353214.jpg"
+              />
+            </div>
+            <!-- Small decorative card -->
+            <div
+              class="absolute -bottom-4 -left-4 md:-left-8 bg-surface-container-lowest p-md rounded-xl shadow-xl hidden sm:block border border-secondary-fixed"
+            >
+              <div class="flex items-center gap-sm">
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-weight="fill"
+                  >calendar_today</span
+                >
+                <span class="font-label-md text-on-surface font-bold"
+                  >20 Tháng 05</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Floral Gallery Section -->
+      <section class="py-xxl bg-surface-container-low" id="gallery">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="text-center mb-xl space-y-sm">
+            <h2 class="font-headline-md text-secondary">Floral Gallery</h2>
+            <div class="w-16 h-px bg-primary mx-auto"></div>
+            <p class="font-body-md text-on-surface-variant">
+              Sắc màu rực rỡ dành riêng cho ngày sinh nhật
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+            <!-- Image 1 -->
+            <div
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30"
+            >
+              <div class="aspect-[4/5] overflow-hidden">
+                <img
+                  alt="Pink Bouquet"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="A sophisticated close-up of a bouquet featuring soft pink ranunculus and baby's breath. The lighting is warm and diffused, creating a dreamy atmosphere. The color palette is dominated by gentle pastels and creamy whites, evoking a sense of innocent joy and birthday warmth. High-end photography style with a shallow depth of field."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ZRuClAWmBEU1zGC_fWBo5EEGUoLn9NZb9XbTCRIxqA0_l5n68kJIojHrG_U1n5cJQCJ3lciTQvQ5DJu7qwTRJ7IN1cU5BVISQgU98G4xBzEXWhjTqmNlr-HMPGEdIFn2A2VTJ_m8ihWjBsWxWfZz2n1A2t9udwQVdhpnWEPugXjzWlZR7fFkGPI9Kd_wFjXcjRBuTlgcUwNRqvAdsuP-88tDUfBrMqrgGG926uSjVC1BUQHycloKDG5SnkMOnVoXQK6qaiqhdTI"
+                />
+              </div>
+              <div class="p-md">
+                <p class="font-label-md text-primary font-bold">
+                  Sắc Hồng Dịu Dàng
+                </p>
+                <p class="text-sm text-on-surface-variant font-body-md">
+                  Sự khởi đầu ngọt ngào
+                </p>
+              </div>
+            </div>
+            <!-- Image 2 -->
+            <div
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 mt-8 md:mt-0"
+            >
+              <div class="aspect-[4/5] overflow-hidden">
+                <img
+                  alt="Red Roses"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="A dramatic and elegant arrangement of classic deep red roses in a minimalist ceramic vase. The lighting is moody yet bright, highlighting the velvet texture of the rose petals. The setting is a clean, modern interior with soft pink accents in the distance. The mood is one of passionate celebration and timeless elegance."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5SI4V_Ce2cx_PPy2QyuVf-ppj1F9e-rpQ5JC1ssMyniYWarGzm332lOTFAgoeJ28QiCzYnzT0wdRgRQMyl2aJ3sl2PcplN8eyoRAdM9xg4ZUw7GpsZtkzGBI4qXRsx-Xsg8pmksD-I1dI3AEgr8m1yXbiJDWzlXyS-__D3IEXKzvttWTWCKHn_LjkRef2eeeZ11A4Okojxja0fcTde6JH6H28DZbCMH08gMhcTmTotHOL4Q2rO_dPM9NDHuS-3sHqg0LBYEYv3aQ"
+                />
+              </div>
+              <div class="p-md">
+                <p class="font-label-md text-primary font-bold">
+                  Đỏ Thắm Nồng Nàn
+                </p>
+                <p class="text-sm text-on-surface-variant font-body-md">
+                  Đam mê và rạng rỡ
+                </p>
+              </div>
+            </div>
+            <!-- Image 3 -->
+            <div
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30"
+            >
+              <div class="aspect-[4/5] overflow-hidden">
+                <img
+                  alt="Mix Bouquet"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="An asymmetric bento-style floral arrangement combining red anemones, pink tulips, and white lilies. The composition is artistic and airy, using whitespace to let each bloom shine. The lighting is natural and bright, like an outdoor garden party. The style is modern minimalist with a romantic, editorial touch."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHVfthzOV6fSi_VLOUWcjUNjs-eCW4W4QRbkT_BnMoHOf8vhofNlNbne8Rhb_Z7k7mCMc0F7tbRjgGqMTN1Zh9hf26jAXgtl0BdOZVGGijq3SDgnXItHUAelGuCGjrNagYxuqHPIUo6Cnf7-iW_Ux4vWuOKCBK4lZDBNKMRCf9MjM4JyB7y8iCHLR03p32vSGsqgUoI1ukDO9nB3GTNpmoN7IQXg3dHd9MVbkeh2q4-sj7rcwv4NqsRr1quq__DDDPPlZShJdrMvI"
+                />
+              </div>
+              <div class="p-md">
+                <p class="font-label-md text-primary font-bold">
+                  Vũ Điệu Muôn Màu
+                </p>
+                <p class="text-sm text-on-surface-variant font-body-md">
+                  Rực rỡ tuổi mới
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Wishes Section -->
+      <section class="py-xxl px-gutter overflow-hidden relative" id="wishes">
+        <div
+          class="absolute top-0 right-0 -mr-20 opacity-10 pointer-events-none"
+        >
+          <span
+            class="material-symbols-outlined text-[300px] text-primary"
+            data-weight="fill"
+            >local_florist</span
+          >
+        </div>
+        <div class="max-w-[800px] mx-auto text-center">
+          <div
+            class="bg-surface-container-lowest p-xl md:p-xxl rounded-3xl shadow-2xl border border-secondary-fixed relative z-10"
+          >
+            <span class="material-symbols-outlined text-primary text-4xl mb-md"
+              >format_quote</span
+            >
+            <h2 class="font-headline-md text-on-surface mb-lg italic">
+              Lời Chúc Từ Trái Tim
+            </h2>
+            <div
+              class="space-y-md font-body-lg text-on-surface-variant italic leading-relaxed"
+            >
+              <p>
+                "Chúc mừng sinh nhật cô gái tháng 5 rực rỡ! Ngày hôm nay không
+                chỉ là kỷ niệm bạn ra đời, mà còn là dịp để chúng tôi trân trọng
+                sự hiện diện tuyệt vời của bạn trong cuộc sống này."
+              </p>
+              <p>
+                "Mong rằng tuổi mới của bạn sẽ đầy ắp những nụ cười, những đóa
+                hoa tươi thắm nhất và mọi ước mơ của bạn đều trở thành hiện
+                thực. Hãy luôn tự tin, tỏa sáng và là chính mình nhé!"
+              </p>
+            </div>
+            <div class="mt-xl flex flex-col items-center">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center mb-sm"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >favorite</span
+                >
+              </div>
+              <p
+                class="font-label-md text-primary font-bold tracking-widest uppercase"
+              >
+                Gửi Bạn Với Tất Cả Yêu Thương
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-xl bg-surface-container-lowest dark:bg-surface-dim border-t border-secondary-fixed dark:border-outline-variant"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-md"
+      >
+        <div class="font-display-lg text-headline-sm text-primary">
+          Eternal Bloom
+        </div>
+        <div
+          class="font-body-md text-body-md text-on-surface-variant text-center"
+        >
+          © 2024 Eternal Bloom. Crafted with love for 20/05.
+        </div>
+        <div class="flex gap-lg">
+          <a
+            class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors"
+            href="#"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
