@@ -141,6 +141,185 @@
         mask-repeat: no-repeat;
         mask-position: center;
       }
+
+      /* Sparkling Effect Animations */
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+      }
+
+      @keyframes floatSlow {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 20px rgba(162, 0, 0, 0.3),
+            0 0 40px rgba(162, 0, 0, 0.1);
+        }
+        50% {
+          box-shadow:
+            0 0 30px rgba(162, 0, 0, 0.6),
+            0 0 60px rgba(162, 0, 0, 0.3);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      @keyframes rotate-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateX(0px) translateY(0px);
+        }
+        25% {
+          transform: translateX(10px) translateY(-10px);
+        }
+        50% {
+          transform: translateX(-5px) translateY(15px);
+        }
+        75% {
+          transform: translateX(8px) translateY(-5px);
+        }
+      }
+
+      /* Sparkle Container */
+      .sparkle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 20;
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: #a20000;
+        animation: sparkle 2s ease-in-out infinite;
+        box-shadow: 0 0 8px rgba(162, 0, 0, 0.8);
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+      }
+
+      .sparkle.small {
+        width: 3px;
+        height: 3px;
+        animation: sparkle 1.5s ease-in-out infinite;
+      }
+
+      .sparkle.large {
+        width: 7px;
+        height: 7px;
+        animation: sparkle 2.5s ease-in-out infinite;
+      }
+
+      /* Floating Text Effect */
+      .floating-text {
+        animation: floatSlow 4s ease-in-out infinite;
+      }
+
+      /* Glow Effects */
+      .glow-effect {
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+
+      .hero-section-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+
+      /* Enhanced card animations */
+      .gallery-card {
+        animation: drift 6s ease-in-out infinite;
+      }
+
+      /* Shimmer effect for buttons */
+      .shimmer-button {
+        background: linear-gradient(
+          90deg,
+          #a20000 0%,
+          #c00000 50%,
+          #a20000 100%
+        );
+        background-size: 1000px 100%;
+        animation: shimmer 3s infinite;
+      }
+
+      /* Floating decorative elements */
+      .floating-icon {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .floating-icon.delayed {
+        animation-delay: 0.5s;
+      }
+
+      .floating-icon.delayed-2 {
+        animation-delay: 1s;
+      }
+
+      /* Glow on hover */
+      .hover-glow {
+        transition: all 0.3s ease;
+      }
+
+      .hover-glow:hover {
+        filter: drop-shadow(0 0 15px rgba(162, 0, 0, 0.6));
+        transform: scale(1.05);
+      }
     </style>
   </head>
   <body class="bg-background text-on-surface font-body-md">
@@ -154,7 +333,7 @@
         <div
           class="font-display-lg text-headline-sm text-primary dark:text-inverse-primary italic"
         >
-          Eternal Bloom
+          Bae
         </div>
         <div class="hidden md:flex items-center gap-xl">
           <a
@@ -174,7 +353,7 @@
           >
         </div>
         <button
-          class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:scale-95 active:scale-90 transition-transform"
+          class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:scale-95 active:scale-90 transition-transform hover-glow"
         >
           Pyy
         </button>
@@ -203,20 +382,20 @@
             <p
               class="font-body-lg text-on-surface-variant max-w-md mx-auto md:mx-0"
             >
-              Chúc mừng sinh nhật Hoài Dư 21 tuổi nhé. Mong rằng em sẽ luôn tiếp tục
-              mơ ước về những mục tiêu, những điều tuyệt vời nhất và hạnh phúc
-              với những gì đang có.
+              Chúc mừng sinh nhật Hoài Như 21 tuổi nhé. Mong rằng em sẽ luôn
+              tiếp tục mơ ước về những mục tiêu, những điều tuyệt vời nhất và
+              hạnh phúc với những gì đang có.
             </p>
             <div
               class="flex flex-wrap gap-md justify-center md:justify-start pt-md"
             >
               <button
-                class="bg-primary text-on-primary px-xl py-md rounded-full font-label-md text-label-md shadow-lg hover:opacity-90 transition-all"
+                class="bg-primary text-on-primary px-xl py-md rounded-full font-label-md text-label-md shadow-lg hover:opacity-90 transition-all hover-glow"
               >
                 Gửi Lời Chúc
               </button>
               <button
-                class="bg-secondary-fixed text-secondary px-xl py-md rounded-full font-label-md text-label-md hover:bg-secondary-container transition-all"
+                class="bg-secondary-fixed text-secondary px-xl py-md rounded-full font-label-md text-label-md hover:bg-secondary-container transition-all hover-glow"
               >
                 Xem Album
               </button>
@@ -224,14 +403,14 @@
           </div>
           <div class="relative flex justify-center items-center">
             <div
-              class="absolute inset-0 bg-secondary-fixed/30 rounded-full blur-3xl -z-10 animate-pulse"
+              class="absolute inset-0 bg-secondary-fixed/30 rounded-full blur-3xl -z-10 animate-pulse hero-section-glow"
             ></div>
             <div
               class="floral-mask w-full aspect-square max-w-[500px] overflow-hidden shadow-2xl border-4 border-white"
             >
               <img
                 alt="Birthday Flowers"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-contain"
                 data-alt="A lush, high-end bouquet of deep red roses and soft pink peonies arranged in a modern minimalist style. The lighting is soft and ethereal, suggesting an early morning celebratory mood. The background is a clean, neutral white, emphasizing the vibrant reds and delicate pinks of the petals. The overall aesthetic is romantic and luxurious, fitting for a milestone birthday celebration."
                 src="IMG_1778080343667_1778080353214.jpg"
               />
@@ -260,33 +439,30 @@
           <div class="text-center mb-xl space-y-sm">
             <h2 class="font-headline-md text-secondary">Happy Birthday</h2>
             <div class="w-16 h-px bg-primary mx-auto"></div>
-            <p class="font-body-md text-on-surface-variant">
-              Album 
-            </p>
+            <p class="font-body-md text-on-surface-variant">Album</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
             <!-- Image 1 -->
             <div
-              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30"
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 hover-glow gallery-card"
             >
               <div class="aspect-[4/5] overflow-hidden">
                 <img
                   alt="Pink Bouquet"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   data-alt="A sophisticated close-up of a bouquet featuring soft pink ranunculus and baby's breath. The lighting is warm and diffused, creating a dreamy atmosphere. The color palette is dominated by gentle pastels and creamy whites, evoking a sense of innocent joy and birthday warmth. High-end photography style with a shallow depth of field."
-                  src="IMG_1655085714110_1655085760019.jpg"
+                  src="b7d55473-3521-49fe-be2f-f3796373f7a4.jpg"
                 />
               </div>
               <div class="p-md">
                 <p class="font-label-md text-primary font-bold">
                   Luôn xinh đẹp!
                 </p>
-               
               </div>
             </div>
             <!-- Image 2 -->
             <div
-              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 mt-8 md:mt-0"
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 mt-8 md:mt-0 hover-glow gallery-card"
             >
               <div class="aspect-[4/5] overflow-hidden">
                 <img
@@ -298,14 +474,13 @@
               </div>
               <div class="p-md">
                 <p class="font-label-md text-primary font-bold">
-                  Luôn hạng phúc!
+                  Luôn hạnh phúc!
                 </p>
-                
               </div>
             </div>
             <!-- Image 3 -->
             <div
-              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30"
+              class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 border border-outline-variant/30 hover-glow gallery-card"
             >
               <div class="aspect-[4/5] overflow-hidden">
                 <img
@@ -316,10 +491,7 @@
                 />
               </div>
               <div class="p-md">
-                <p class="font-label-md text-primary font-bold">
-                  Luôn vui vẻ!
-                </p>
-                
+                <p class="font-label-md text-primary font-bold">Luôn vui vẻ!</p>
               </div>
             </div>
           </div>
@@ -338,7 +510,7 @@
         </div>
         <div class="max-w-[800px] mx-auto text-center">
           <div
-            class="bg-surface-container-lowest p-xl md:p-xxl rounded-3xl shadow-2xl border border-secondary-fixed relative z-10"
+            class="bg-surface-container-lowest p-xl md:p-xxl rounded-3xl shadow-2xl border border-secondary-fixed relative z-10 hover-glow glow-effect"
           >
             <span class="material-symbols-outlined text-primary text-4xl mb-md"
               >format_quote</span
@@ -380,5 +552,102 @@
         </div>
       </section>
     </main>
+    <!-- Sparkle Container -->
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
+    <script>
+      // Create sparkling particles effect
+      function createSparkles() {
+        const container = document.getElementById("sparkleContainer");
+        const sparkleCount = 50;
+
+        function createSparkle() {
+          const sparkle = document.createElement("div");
+          sparkle.className = [
+            "sparkle",
+            ["small", "large", ""][Math.floor(Math.random() * 3)],
+          ]
+            .filter(Boolean)
+            .join(" ");
+
+          sparkle.style.left = Math.random() * 100 + "%";
+          sparkle.style.top = Math.random() * 100 + "%";
+          sparkle.style.animationDelay = Math.random() * 2 + "s";
+          sparkle.style.animationDuration = Math.random() * 1 + 1.5 + "s";
+
+          container.appendChild(sparkle);
+
+          // Remove and recreate for continuous effect
+          setTimeout(
+            () => {
+              sparkle.remove();
+              createSparkle();
+            },
+            (Math.random() * 1 + 1.5) * 1000,
+          );
+        }
+
+        // Create initial sparkles
+        for (let i = 0; i < sparkleCount; i++) {
+          setTimeout(() => createSparkle(), Math.random() * 2000);
+        }
+      }
+
+      // Initialize sparkles when page loads
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", createSparkles);
+      } else {
+        createSparkles();
+      }
+
+      // Add smooth scroll animation on section visibility
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe sections
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "all 0.8s ease-out";
+        observer.observe(section);
+      });
+
+      // Add floating animation to images on scroll
+      const images = document.querySelectorAll("img");
+      images.forEach((img, index) => {
+        img.style.animation = `floatSlow ${4 + index * 0.5}s ease-in-out infinite`;
+      });
+
+      // Add glow effect on mouse move
+      document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        document.querySelectorAll("button").forEach((button) => {
+          const rect = button.getBoundingClientRect();
+          const distance = Math.hypot(
+            x - rect.left - rect.width / 2,
+            y - rect.top - rect.height / 2,
+          );
+
+          if (distance < 200) {
+            button.style.filter = `drop-shadow(0 0 ${20 - distance / 10}px rgba(162, 0, 0, 0.6))`;
+          } else {
+            button.style.filter = "drop-shadow(0 0 5px rgba(162, 0, 0, 0.2))";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
